@@ -72,51 +72,8 @@ SELECT count_unique_words('This is a test. This test is simple.');
 SELECT count_unique_words('Hello world Hello');
 -- Результат: 2
 
-SELECT count_unique_words(NULL);
--- Результат: 0
-
 SELECT count_unique_words('');
 -- Результат: 0
-```
-
----
-
-## **Примеры**
-
-### **Пример с таблицей**
-Создайте таблицу и выполните запрос:
-```sql
-CREATE TABLE phrases (id SERIAL PRIMARY KEY, phrase TEXT);
-INSERT INTO phrases (phrase) VALUES
-    ('This is a test'),
-    ('Another example with unique words'),
-    ('Words repeat words');
-
-SELECT id, count_unique_words(phrase) AS unique_word_count FROM phrases;
-```
-
-### **Результат**
-| ID | UNIQUE_WORD_COUNT |
-|----|-------------------|
-|  1 | 4                 |
-|  2 | 5                 |
-|  3 | 2                 |
-
----
-
-## **Тестирование**
-
-Для выполнения тестов запустите SQL-скрипт:
-```bash
-psql -d unique_words_db -f test.sql
-```
-
-Пример файла `test.sql`:
-```sql
-SELECT count_unique_words('A quick brown fox jumps over the lazy dog');
-SELECT count_unique_words('Repeat repeat REPEAT');
-SELECT count_unique_words('');
-SELECT count_unique_words(NULL);
 ```
 
 ---
@@ -130,7 +87,7 @@ unique_words/
 ├── unique_words.control   # Контрольный файл PostgreSQL
 ├── unique_words--1.0.sql  # SQL-скрипт для установки расширения
 ├── README.md              # Документация
-├── test.sql               # SQL-скрипт для тестирования
+├── LICENSE                # Лицензия
 ```
 
 ---
