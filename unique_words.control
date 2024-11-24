@@ -1,0 +1,4 @@
+# unique_words.control
+comment = 'Extension for counting unique words in a string'
+default_version = '1.0'
+module_pathname = '$libdir/unique_words'
