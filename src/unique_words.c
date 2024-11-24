@@ -40,7 +40,7 @@ Datum count_unique_words(PG_FUNCTION_ARGS) {
 
     // Проверка на NULL
     if (PG_ARGISNULL(0)) {
-        PG_RETURN_INT32(0);     /
+        PG_RETURN_INT32(0);     
     }
 
     input = PG_GETARG_TEXT_PP(0);               
@@ -76,3 +76,4 @@ Datum count_unique_words(PG_FUNCTION_ARGS) {
 
     free(hash_table);                                       
     PG_RETURN_INT32((int32)unique_count);                   
+}
